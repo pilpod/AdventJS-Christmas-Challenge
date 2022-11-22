@@ -5,18 +5,14 @@ export default function countSheeps(sheeps) {
     sheeps.forEach(sheep => {
         if (checkIfSheepIsRed(sheep.color) &&
             isNameContainLettersNandA(sheep.name)
-        ) {
-            sheepsFiltered.push(sheep);
-        }
+        ) sheepsFiltered.push(sheep);
     });
 
     return sheepsFiltered;
 }
 
 function checkIfSheepIsRed(sheepColor) {
-    if (sheepColor === 'rojo') {
-        return true;
-    }
+    if (sheepColor === 'rojo') return true;
     return false;
 }
 
@@ -25,6 +21,5 @@ function isNameContainLettersNandA(sheepName) {
 
     if (name.includes('a') &&
         name.includes('n')) return true;
-
     return false;
 }

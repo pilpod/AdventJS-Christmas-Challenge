@@ -1,5 +1,4 @@
 import countSheeps from "../src/Challenge01";
-import contarOvejas from "../src/Challenge01";
 
 describe('Counting Sheeps to sleep', () => {
 
@@ -17,6 +16,8 @@ describe('Counting Sheeps to sleep', () => {
         const sheepsFiltered = countSheeps(sheeps);
         // Then
         expect(sheepsFiltered).toHaveLength(2);
+        expect(sheepsFiltered[0].name).toContain("Navidad");
+        expect(sheepsFiltered[1].name).toContain("Ki Na Ma");
         // [{ name: 'Navidad', color: 'rojo' },
         //  { name: 'Ki Na Ma', color: 'rojo' }]
     });

@@ -1,23 +1,24 @@
 export default function listGifts(letter) {
 
-    const arrayGiftsList = letter.split(" ");
+    const arrayGiftsList = letter.trim().split(" ");
     const giftsList = {};
 
     arrayGiftsList.forEach(gift => {
+        const wasStrikethroughGift = (gift[0] === '_');
 
-        if (gift[0] === '_') {
-            return
-        }
+        if (wasStrikethroughGift) return;
 
         if (giftsList.hasOwnProperty(gift)) {
             giftsList[gift]++;
             return;
         }
 
-        Object.defineProperty(giftsList, gift, {
+        giftsList[gift] = 1;
+
+        /* Object.defineProperty(giftsList, gift, {
             value: 1,
             writable: true
-        });
+        }); */
     });
 
     return giftsList;
